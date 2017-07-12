@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <title>The Endless Wanderer</title>
+		<meta name="description" content="The Endless Wanderer unites artists and scientists through themed, prized and juried visual art contests">
+		<meta name="keywords" content="artist, artists, scientist, scientists, art, arts, visual, online, gallery, galleries, exhibition, exhibitions contest, contests, collection, collections, competition, competitions, call for, calling for, painting, paintings, paint, painter, painters, drawing, drawings, draw, drawer, drawers, sculpture, sculptures, sculpting, sculpter, sculpters, photography, photographies, photographer, photographers, sketching, sketch, sketches, sketcher, sketchers, etch, etches, etching, science, sciences, scientific, scientifics, physics, physicist, physicists, chemistry, chemist, chemists, biology, biologist, biologists, architecture, architect, architects, computer, IT, microbiology, microbiologist, microbiologists, designing, design, designs, designer, designers, international, fee, entry, entries, submission, submissions, submit, submitted, submitting, jury, juror, jurors, juried, judge, judges, judged, theme, themes, themed, prize, prizes, prized, award, awards, present, presents, win, winner, winners, winning, winnings, inspire, inspiring, inspired, inspiration, create, creativity, creativities, creation, creations, knowledge, aesthetic, beauty, beautiful, talent, talents, talented, mind, mindful, mindfullness, spirit, spirits, spiritual, spirituality, logic, logical, work, works, craft, crafts, mystery, mystery, mysterious, discover, discoverer, discoverers, discovery, discoveries, express, expression, expressionism, expressionnists, expressionnist, cubic, cubist, cubists, cubism, abstract art, abstract, contemporary, contemporaries, modern art, modernist, modernists, modernism, pointillism, pointillists, pointillist, graphic, graphics, picture, pictures, landscape, portrait, landscapes, portraits, organize, organise, organisation, advert, ad, advertised, advertized, advertising, advertizing, exposure, expose, exposed, imagine, imagination, colabore, collaboration, together, share, shares, sharing, sharings, idea, ideas, search, seracher, searchers, research, researcher, reseachers, think, thought, thoughts, media, medias, deadline, deadlines, candidat, candidats, paricipant, participants, send, sent, sending">
+		<meta name="author" content="The Endless Wanderer">
+		<meta name="copyright" content="2015">
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" media="screen" type="text/css" title="Design" href="CSS/entryForm.css"/>
+		<link rel="shortcut icon" href="Images/favicon.ico" />
+		
+		<script>
+			$( document ).ready(function() {
+				/*var taille_contact = $('#form_contact').height();
+				var ul_sc_contact = document.getElementById("social_contact").firstElementChild;
+				
+				$( document ).scroll();
+				$('#social_contact').css("height", taille_contact + 'px');*/
+				/*$(ul_ph_contact).css("margin-top", taille_contact/5 + 'px');*/
+				
+				var width_pic = $('.header_pic').width();
+				var height_pic = width_pic / 3.8;
+				$('.header_pic').css("height", height_pic +'px');
+				$('.txt_header').css("top", height_pic/1.8 +'px');
+    });
+		</script>
+	</head>
+
+<body>
+	<?php include_once("analyticstracking.php") ?>
+	
+	<header id="header" class="clearfix">
+	
+		<section class="header_pic no_top_border" style="position:relative" >
+						
+			<h1 class="txt_header main">The Endless Wanderer</h1>
+						
+		</section>
+	
+		<nav id="nav" role="navigation" class="nav">
+			<div class="nav-mobile"></div>
+			<ul class="nav-list">
+				<li class="nav-item" id="menu_home" onClick="reply_click(this.id)"><a href="index.html" style="padding: 0;"><img src="Images/knot_head.gif" title="home" alt="home" style="width:50px; margin: 0 auto; -moz-transform: scaleY(-1) translateY(-15px); -o-transform: scaleY(-1) translateY(-15px); -webkit-transform: scaleY(-1) translateY(-15px); transform: scaleY(-1) translateY(-15px);"></a></li>
+				<li class="nav-item" id="menu_news" onClick="reply_click(this.id)"><a href="index.html#news">News</a></li>
+				<li class="nav-item" id="menu_french" onClick="reply_click(this.id)"><a href="index.html#permanentExh">Permanent Exhibition</a></li>
+				<li class="nav-item" id="menu_computerscience" onClick="reply_click(this.id)"><a href="index.html#contests">Our Contests</a></li>
+				<!-- <li class="nav-item" id="menu_forum" onClick="reply_click(this.id)"><a href="#forum">Forum</a></li> -->
+				<li class="nav-item" id="menu_contact" onClick="reply_click(this.id)"><a href="#contact">Contact Us</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+    <div id="container" class="container">
+		<a class="anchor" id="form"></a>
+        <section class="section_info no_bottom_border">
+			<h1>Entry Form</h1>
+		</section>
+		<section class="box subject" id="section_EntryForm">
+			<p id="submit_info">
+				To submit your entry/entries, please insert:
+				<ol id="requirements">
+					<li><b>your name or alias</b> (insert only letters or numbers),</li><br>
+					<li><b>your email address,</b></li><br>
+					<li>your website or portfolio URL, if you have one,</li><br>
+					<span>Then:</span>
+					<li><b>choose your file/s,</b><br>
+						<u>accepted format:</u> jpg, jpeg, png or gif.<br>
+						your file/s should be at least <b>300dpi</b> and a maximum size of each file of <b>5MB</b>.
+					</li><br>
+					<li><b>add a description for each of your submission</b> following this format:<br>"title", width x height cm/inches, media used, other details;</li><br>
+					<li><b>click the "Submit" button</b>. In case of problem, the processor will indicate the issue. <br>You will receive a confirmation email.</li><br>
+					<span>Then:</span>
+					<li><del>proceed to payment</del></li>
+				</ol>
+			</p>	
+			<form class="contests_box" id="form_contests" method="post" action="uploadSpecial.php" enctype="multipart/form-data">
+				<fieldset id="contests_info_applicant">
+					<br>
+					<p>
+						<input type="text" name="contests_name" id="contests_name" placeholder="Name or alias" required  /><span> (required)</span>
+					<br><br>
+						<input type="email" name="contests_email" id="contests_email" placeholder="email: example@domain.com" required /><span> (required)</span>
+					<br><br>
+						<input type="url" name="contests_site" id="contests_site" value="http://" /><span> (optional)</span>
+					<br>
+					</p>
+				</fieldset>
+						
+				<fieldset id="file">
+					<p>
+						<input type="file" id="contests_file" name="uploaded[]" multiple="multiple" accept="image/*" required /><span> (required)</span>
+					</p>
+					<a class="anchor" id="paypal"></a>
+					<p>
+						<textarea name="description1" id="description1" cols="40" rows="5" placeholder="Descriptions: title1, w x h, media1, other; title2, w x h, media2, other; ..." required ></textarea><span> (required)</span>
+					</p>
+				</fieldset>
+				
+				<fieldset id="send"> 
+					<button type=submit value="Upload" name="envoyer">Submit</button>
+				</fieldset>
+			</form>
+
+			<!--form id="paypal_button" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="QGSKLDFNG8SUC">
+				<table>
+				<tr><td><input type="hidden" name="on0" value="entries"></td></tr><h3 id="pay_info">THEN<br> select the number of entries you submitted and click 'Add to Cart'. You will be redirected to paypal payment page. Paypal also accepts credit cards. If you do not want to use paypal, send us a message via our <a href="#contact">contact form.</a></h3><tr><td><select name="os0">
+					<option value="1 ENTRY">1 ENTRY €20.00 EUR</option>
+					<option value="2 ENTRIES">2 ENTRIES €40.00 EUR</option>
+					<option value="3 ENTRIES">3 ENTRIES €60.00 EUR</option>
+					<option value="4 ENTRIES">4 ENTRIES €80.00 EUR</option>
+					<option value="5 ENTRIES">5 ENTRIES €100.00 EUR</option>
+					<option value="6 ENTRIES">6 ENTRIES €120.00 EUR</option>
+					<option value="7 ENTRIES">7 ENTRIES €140.00 EUR</option>
+					<option value="8 ENTRIES">8 ENTRIES €160.00 EUR</option>
+					<option value="9 ENTRIES">9 ENTRIES €180.00 EUR</option>
+					<option value="10 ENTRIES">10 ENTRIES €200.00 EUR</option>
+				</select> </td></tr>
+				</table>
+				<input type="hidden" name="currency_code" value="EUR">
+				<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+			</form-->
+
+		</section>
+					
+					<a class="anchor" id="contact"></a>
+					<section class="section_info no_top_border" >
+					<h2>Contact Us</h2>  
+					</section>
+					
+					<section class="box" id="section_contact">
+						
+						<div class="contact_box" id="social_contact">
+							<ul>
+								<li>
+									<a id="fb" href="http://www.facebook.com/theendlesswanderer/" target="_blank" rel="nofollow"><img src="Images/facebook-logo.png" title="Facebook" alt="Facebook"></img></a>
+									<a class="sc_txt" href="http://www.facebook.com/theendlesswanderer/" target="_blank" rel="nofollow"><h3>The Endless Wanderer</h3></a>
+								</li>
+								<li>
+									<a id="tw" href="http://twitter.com/TEW2121" target="_blank" rel="nofollow"><img src="Images/twitter-logo.jpg" title="Twitter" alt="Twitter"></img></a>
+									<a class="sc_txt" href="http://twitter.com/TEW2121" target="_blank" rel="nofollow"><h3>@TEW2121</h3></a>
+								</li>
+								<!-- <li>
+									<a id="da"><img src="Images/deviantart-logo.png"></img></a>
+								</li> -->							
+							</ul>
+						</div>
+						
+						<form class="contact_box" id="form_contact" method="post" action="traitement.php">
+						
+							<fieldset id="contact_info">
+								<p>
+									<!--h3>Name</h3-->
+									<input type="text" name="name" id="name" placeholder="Name" required  />
+									<br>
+									<!--h3>E-mail address</h3-->
+									<input type="email" name="email" id="email" placeholder="example@domain.com" required />
+									<br>
+								</p>
+							</fieldset>
+									
+							<fieldset id="question"> 
+								<p>
+									<!--h3>Question:</h3-->
+									<textarea name="message" id="message" cols="40" rows="5" placeholder="Message" required ></textarea>
+								</p>
+							</fieldset>
+									
+							<fieldset id="contact_send"> 
+								<button type=submit name="envoyer">Send your message</button>
+							</fieldset>
+						</form>
+					</section>
+	
+	<footer id="footer_index">
+			<h4>The Endless Wanderer Copyright © 2015-2016<br>
+			All rights reserved. <a href="privacypolicy.html">Privacy Policy.</a><a href="sitemap.html"> Sitemap.</a></h4>
+	</footer>
+
+	</div> <!-- container -->
+	
+	<script>
+
+    var height = $('#header').height();
+	var height_down = 50;
+	var height_up = $('#header').height();
+	  
+	  /*function reply_click(clicked_id)
+		{
+			if(clicked_id == 'menu_french'){
+				$('#french').css("padding-top",height_down + 50 + 'px');
+				$('#french').css("marging-top","-" + height_down + 50 + 'px');
+				$('#computerscience').css("padding-top", 50 + 'px');
+				$('#computerscience').css("marging-top","-" + 0 + 'px');
+				$('#contact').css("padding-top", 50 + 'px');
+				$('#contact').css("marging-top","-" + 0 + 'px');
+			}
+			else if(clicked_id == 'menu_computerscience'){
+				$('#french').css("padding-top", 50 + 'px');
+				$('#french').css("marging-top","-" + 0 + 'px');
+				$('#computerscience').css("padding-top", height_down + 50 + 'px');
+				$('#computerscience').css("marging-top","-" + height_down + 50 + 'px');
+				$('#contact').css("padding-top", 50 + 'px');
+				$('#contact').css("marging-top","-" + 0 + 'px');
+			}
+			else if(clicked_id == 'menu_contact'){
+				$('#french').css("padding-top", 50 + 'px');
+				$('#french').css("marging-top","-" + 0 + 'px');
+				$('#computerscience').css("padding-top", 50 + 'px');
+				$('#computerscience').css("marging-top","-" + 0 + 'px');
+				$('#contact').css("padding-top", height_down + 50 + 'px');
+				$('#contact').css("marging-top","-" + height_down + 50 + 'px');
+			}
+			else{
+				$('#french').css("padding-top", 50 + 'px');
+				$('#french').css("marging-top","-" + 0 + 'px');
+				$('#computerscience').css("padding-top", 50 + 'px');
+				$('#computerscience').css("marging-top","-" + 0 + 'px');
+				$('#contact').css("padding-top", 50 + 'px');
+				$('#contact').css("marging-top","-" + 50 + 'px');
+			}
+			
+		}*/
+			
+			$(document).scroll (function (e) {
+		  intElemOffsetHeight = window.pageYOffset;
+		  if ($(window).scrollTop())
+		  {
+			
+			var width_pic = $('.header_pic').width();
+			var height_pic = width_pic / 3.8;
+			/*$(window).offsetHeight;*/
+			if(intElemOffsetHeight>height_pic)
+			{
+				$('#nav').css("position", 'fixed');
+				  /*$('#header').css("height", 15 + '%');*/
+				  /*$('.main').css("opacity", 0);
+				  $('#container').css("margin-top", height_down + 40 + 'px');*/
+				$('.nav-item').css("display", 'inline-block');
+				/*$('.nav-item a').css("font-size", '18pt');*/
+			}
+			else{
+				$('#nav').css("position", 'initial');
+				/*$('#header').css("height", 35 + '%');*/
+				/*height_down = $('#header').height();
+				$('.main').css("opacity", 1);
+				$('#container').css("margin-top", height_up + 'px');*/
+				$('.nav-item:first-child').css("display", 'none');
+				/*$('.nav-item a').css("font-size", '25pt');*/
+				/* $('#knot').css("top", '0%');
+				$('#knot').css("left", '45%'); */
+			}
+		  }
+		  else{
+			$('#nav').css("position", 'initial');
+			/*$('#header').css("height", 35 + '%');*/
+			/*height_down = $('#header').height();
+			$('.main').css("opacity", 1);
+			$('#container').css("margin-top", height_up + 'px');*/
+			$('.nav-item:first-child').css("display", 'none');
+			/*$('.nav-item a').css("font-size", '25pt');*/
+			/* $('#knot').css("top", '0%');
+			$('#knot').css("left", '45%'); */
+		  }
+		});
+		
+		(function () {
+    
+    // Create mobile element
+    /*var mobile = document.createElement('div');
+    mobile.className = 'nav-mobile';
+    document.querySelector('.nav').appendChild(mobile);*/
+
+    // hasClass
+    function hasClass(elem, className) {
+        return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+    }
+
+    // toggleClass
+    function toggleClass(elem, className) {
+        var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+        if (hasClass(elem, className)) {
+            while (newClass.indexOf(' ' + className + ' ') >= 0) {
+                newClass = newClass.replace(' ' + className + ' ', ' ');
+            }
+            elem.className = newClass.replace(/^\s+|\s+$/g, '');
+        } else {
+            elem.className += ' ' + className;
+        }
+    }
+
+    // Mobile nav function
+    var mobileNav = document.querySelector('.nav-mobile');
+    var toggle = document.querySelector('.nav-list');
+    mobileNav.onclick = function () {
+        toggleClass(this, 'nav-mobile-open');
+        toggleClass(toggle, 'nav-active');
+    };
+})();
+		
+	</script>
+
+
+	<!--script>
+		(function () {
+    
+    // Create mobile element
+    var mobile = document.createElement('div');
+    var nav_all = document.querySelector('.nav');
+    mobile.className = 'nav-mobile';
+    nav_all.insertBefore(mobile, nav_all.childNodes[0]);
+      
+      var height = $('#header').height();
+      $('.nav-mobile').css("top", height/2);
+      
+
+    // hasClass
+    function hasClass(elem, className) {
+        return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+    }
+
+    // toggleClass
+    function toggleClass(elem, className) {
+        var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+        if (hasClass(elem, className)) {
+            while (newClass.indexOf(' ' + className + ' ') >= 0) {
+                newClass = newClass.replace(' ' + className + ' ', ' ');
+            }
+            elem.className = newClass.replace(/^\s+|\s+$/g, '');
+        } else {
+            elem.className += ' ' + className;
+        }
+    }
+
+    // Mobile nav function
+    var mobileNav = document.querySelector('.nav-mobile');
+    var toggle = document.querySelector('.nav-list');
+    mobileNav.onclick = function () {
+        toggleClass(this, 'nav-mobile-open');
+        toggleClass(toggle, 'nav-active');
+      $(document).ready(function(){
+      var height = $('#header').height();
+		  /*alert(height);*/
+		  $('#theColumns').css("margin-top",height);
+		  $('#rightColumn').css("top",height);
+      $('#leftColumn').css("top",height);
+});
+    };
+})();
+		</script-->
+
+
+    <!--script type="text/javascript" src="https://mylivechat.com/chatinline.aspx?hccid=51699614"></script-->
+    <script type="text/javascript" src="jQuery.js"></script>
+</body>
+</html>
